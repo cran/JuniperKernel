@@ -1,0 +1,40 @@
+## Distinguish between 32 and 64 bit windows
+ifeq "$(WIN)" "64"
+    FLV = x64
+else
+    FLV = i386
+endif
+
+CXX_STD = CXX11
+PKG_CPPFLAGS = -I../inst/include -I. -I../src
+PKG_LIBS = -lzmq -L${FLV}
+
+ZMQ_VERSION = 4.2.2
+ZMQ_TAR_FILE= libzmq-${ZMQ_VERSION}-${FLV}.tar.gz
+ZMQ_TAR_URL = https://github.com/JuniperKernel/zmq/raw/master/win${WIN}/${ZMQ_TAR_FILE}
+
+export
+
+all: clean buildzmq $(SHLIB)
+
+.Phony: clean
+clean:
+	@rm -rf *dll
+	@rm -rf *zmq*
+	@rm -rf *i386*
+	@rm -rf *x64*
+	@rm -rf *.o
+
+buildzmq:
+	@mkdir temp
+	@cp ../inst/pbdZMQ-0.2-6.zip temp
+	@cd temp && unzip -q pbdZMQ-0.2-6.zip && $(MAKE) -C pbdZMQ-0.2-6/src -f Makevars.win ./libzmq.dll
+	@[ -d ${FLV} ] || mkdir -p ${FLV}
+	@cp temp/pbdZMQ-0.2-6/src/libzmq.dll ${FLV}
+	@cp temp/pbdZMQ-0.2-6/src/libzmq.dll .
+	@rm -rf temp
+	@rm -rf ../inst/zeromq*
+ifeq "${FLV}" "x64"
+	@rm -rf ../inst/pbdZMQ-0.2-6.zip
+	@rm -rf ../inst/zeromq-4.2.2.tar.gz
+endif
