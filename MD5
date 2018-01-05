@@ -1,6 +1,6 @@
-6b1bed433b2d44f34ac9c868df9052ed *DESCRIPTION
+e70426d376170fe7544b08ca688ca647 *DESCRIPTION
 27371a8435eabaaa53682df88efaa04b *NAMESPACE
-734ea9b3aeec8ff19074d2a01a2d8d04 *NEWS.md
+718a3bb54a50cf32e497ba61d4d527ae *NEWS.md
 e6bf109b471213a4b10a84fe0d11b00f *R/RcppExports.R
 5488977688c3ac5e143d8dae6160095e *R/booter.R
 d43604022d75bdc09cc3aaabd51d4525 *R/comm_close.R
@@ -20,7 +20,7 @@ aa63659acf005060f0ab77e26eb6f3bf *R/shutdown_request.R
 81a9b3cc072a5541f8033743f976c1c9 *R/zzz.R
 7f151b174ba235c1833b4c2f53185fbf *cleanup
 ac1e9dbbb5b7a00e6e6f01ee8f61b74e *cleanup.win
-b62d0a84c62440e5d9e6f9cbc485b7c5 *configure
+52f4c26116ca810e41996d028cd74d31 *configure
 5e3b3aa84dbfe565718773f7924c0af7 *inst/COPYRIGHTS
 0d57c2c2f2b9e19e1a221b6c7ef0dedb *inst/extdata/Rlogo.svg
 20c1346c7adfcfa2f6ccdc20703fa84d *inst/extdata/logo-64x64.png
@@ -76,6 +76,10 @@ fd1bd20b60687ff6853a655ae568783c *inst/include/xtl/xsequence.hpp
 79e3a8219fd20c34317197b60d0b9a32 *inst/include/xtl/xtype_traits.hpp
 27b162335ba4b14911f1ff8a49135977 *inst/include/xtl/xvariant.hpp
 00ba4a2d90bc4fc683a370b52cab32cd *inst/include/xtl/xvariant_impl.hpp
+8e0640298500943b18c3fe0ea4861ed8 *inst/include/zmq.h
+0a74ca6fc42e20247fbb6fd381ba43a3 *inst/include/zmq.hpp
+d7e813de740c56c3f485007c0302c077 *inst/include/zmq_addon.hpp
+b65f99abdf2ed60f178d0585f9c83c2c *inst/include/zmq_utils.h
 589f2b68b2ecab5e2b0e7942e9102df0 *inst/runits/runit.testCommInfo.R
 8df2b82dd423ff2ff8001fa9481f7658 *inst/runits/runit.testComplete.R
 0dd1655ad67e46df7549449acd8c1b81 *inst/runits/runit.testExecute.R
@@ -106,4 +110,3 @@ c111c293037ce19b7ff8dd19d1c7c225 *src/Makevars.win
 069ebd9d2920a37d30eaaf54fcdf5611 *src/RcppExports.cpp
 5da848112e7e6b6b37c50cb9544ff402 *src/install.libs.R
 4a0ecbdbd1a4e19dd3febbc0d28a8bd2 *src/juniper.cpp
-52087b94345cb4afc8fac30c455831e6 *tests/doRunit.R
