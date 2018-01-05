@@ -6,21 +6,23 @@
 * The full license is in the file LICENSE, distributed with this software. *
 ****************************************************************************/
 
-#ifndef XEUS_EXPORT_HPP
-#define XEUS_EXPORT_HPP
+#ifndef XTL_FUNCTIONAL_HPP
+#define XTL_FUNCTIONAL_HPP
 
-#ifdef _WIN32
-    #ifdef XEUS_EXPORTS
-        #define XEUS_API __declspec(dllexport)
-    #else
-        #define XEUS_API __declspec(dllimport)
-    #endif
-#else
-    #define XEUS_API
+#include <utility>
+
+#include "xtl_config.hpp"
+
+namespace xtl
+{
+    struct identity
+    {
+        template <class T>
+        T&& operator()(T&& x) const
+        {
+            return std::forward<T>(x);
+        }
+    };
+}
 #endif
 
-#define XEUS_VERSION_MAJOR 0
-#define XEUS_VERSION_MINOR 8
-#define XEUS_VERSION_PATCH 1
-
-#endif

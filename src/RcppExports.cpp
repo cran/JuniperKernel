@@ -118,6 +118,64 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// run_client
+SEXP run_client(int hbport, int ioport, int shport, int ctport, int inport);
+RcppExport SEXP _JuniperKernel_run_client(SEXP hbportSEXP, SEXP ioportSEXP, SEXP shportSEXP, SEXP ctportSEXP, SEXP inportSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type hbport(hbportSEXP);
+    Rcpp::traits::input_parameter< int >::type ioport(ioportSEXP);
+    Rcpp::traits::input_parameter< int >::type shport(shportSEXP);
+    Rcpp::traits::input_parameter< int >::type ctport(ctportSEXP);
+    Rcpp::traits::input_parameter< int >::type inport(inportSEXP);
+    rcpp_result_gen = Rcpp::wrap(run_client(hbport, ioport, shport, ctport, inport));
+    return rcpp_result_gen;
+END_RCPP
+}
+// client_exec_request
+void client_exec_request(SEXP jtc, std::string payload);
+RcppExport SEXP _JuniperKernel_client_exec_request(SEXP jtcSEXP, SEXP payloadSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type jtc(jtcSEXP);
+    Rcpp::traits::input_parameter< std::string >::type payload(payloadSEXP);
+    client_exec_request(jtc, payload);
+    return R_NilValue;
+END_RCPP
+}
+// client_exec_reply
+std::string client_exec_reply(SEXP jtc);
+RcppExport SEXP _JuniperKernel_client_exec_reply(SEXP jtcSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type jtc(jtcSEXP);
+    rcpp_result_gen = Rcpp::wrap(client_exec_reply(jtc));
+    return rcpp_result_gen;
+END_RCPP
+}
+// wait_for_hb
+void wait_for_hb(SEXP jtc);
+RcppExport SEXP _JuniperKernel_wait_for_hb(SEXP jtcSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type jtc(jtcSEXP);
+    wait_for_hb(jtc);
+    return R_NilValue;
+END_RCPP
+}
+// iopub_recv
+std::string iopub_recv(SEXP jtc);
+RcppExport SEXP _JuniperKernel_iopub_recv(SEXP jtcSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type jtc(jtcSEXP);
+    rcpp_result_gen = Rcpp::wrap(iopub_recv(jtc));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_JuniperKernel_init_kernel", (DL_FUNC) &_JuniperKernel_init_kernel, 1},
@@ -130,6 +188,11 @@ static const R_CallMethodDef CallEntries[] = {
     {"_JuniperKernel_jk_device", (DL_FUNC) &_JuniperKernel_jk_device, 7},
     {"_JuniperKernel_filter_comms", (DL_FUNC) &_JuniperKernel_filter_comms, 1},
     {"_JuniperKernel_comm_request", (DL_FUNC) &_JuniperKernel_comm_request, 1},
+    {"_JuniperKernel_run_client", (DL_FUNC) &_JuniperKernel_run_client, 5},
+    {"_JuniperKernel_client_exec_request", (DL_FUNC) &_JuniperKernel_client_exec_request, 2},
+    {"_JuniperKernel_client_exec_reply", (DL_FUNC) &_JuniperKernel_client_exec_reply, 1},
+    {"_JuniperKernel_wait_for_hb", (DL_FUNC) &_JuniperKernel_wait_for_hb, 1},
+    {"_JuniperKernel_iopub_recv", (DL_FUNC) &_JuniperKernel_iopub_recv, 1},
     {NULL, NULL, 0}
 };
 

@@ -49,3 +49,23 @@ comm_request <- function(type) {
     invisible(.Call(`_JuniperKernel_comm_request`, type))
 }
 
+run_client <- function(hbport, ioport, shport, ctport, inport) {
+    .Call(`_JuniperKernel_run_client`, hbport, ioport, shport, ctport, inport)
+}
+
+client_exec_request <- function(jtc, payload) {
+    invisible(.Call(`_JuniperKernel_client_exec_request`, jtc, payload))
+}
+
+client_exec_reply <- function(jtc) {
+    .Call(`_JuniperKernel_client_exec_reply`, jtc)
+}
+
+wait_for_hb <- function(jtc) {
+    invisible(.Call(`_JuniperKernel_wait_for_hb`, jtc))
+}
+
+iopub_recv <- function(jtc) {
+    .Call(`_JuniperKernel_iopub_recv`, jtc)
+}
+
