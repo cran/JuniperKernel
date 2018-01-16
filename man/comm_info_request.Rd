@@ -2,7 +2,7 @@
 % Please edit documentation in R/comm_info_request.R
 \name{comm_info_request}
 \alias{comm_info_request}
-\title{Inspect Handler}
+\title{Comm Info Request}
 \usage{
 comm_info_request(request_msg)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/history_request.R
 \name{history_request}
 \alias{history_request}
-\title{Inspect Handler}
+\title{History Request Handler}
 \usage{
 history_request(request_msg)
 }

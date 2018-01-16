@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_complete_request.R
 \name{is_complete_request}
 \alias{is_complete_request}
-\title{Complete Handler}
+\title{Is Complete Handler}
 \usage{
 is_complete_request(request_msg)
 }

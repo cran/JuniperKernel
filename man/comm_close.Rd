@@ -2,23 +2,16 @@
 % Please edit documentation in R/comm_close.R
 \name{comm_close}
 \alias{comm_close}
-\title{Inspect Handler}
+\title{Comm Close}
 \usage{
 comm_close(request_msg)
 }
 \arguments{
 \item{request_msg}{A list passed in from \code{doRequest} representing the
-deserialized \code{inspect_request} message JSON.}
-}
-\value{
-A list having names \code{msg_type} and \code{content}. The
-  \code{msg_type} is \code{inspect_reply}, which corresponds
-  to the \code{inspect_request} message. The \code{content} field
-  complies with the Jupyter wire message protocol specification
-  for \code{inspect_reply} messages.
+deserialized \code{comm_close} message JSON.}
 }
 \description{
-Handler for the inspect_request Message Type
+Handler for the comm_close Message Type
 }
 \examples{
 \dontrun{
@@ -28,7 +21,7 @@ Handler for the inspect_request Message Type
 
 }
 \references{
-\url{http://jupyter-client.readthedocs.io/en/latest/messaging.html#introspection}
+\url{http://jupyter-client.readthedocs.io/en/latest/messaging.html#tearing-down-comms}
 }
 \author{
 Spencer Aiello
