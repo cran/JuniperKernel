@@ -2,11 +2,11 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 init_kernel <- function(connection_file) {
-    .Call(`_JuniperKernel_init_kernel`, connection_file)
+    .Call('_JuniperKernel_init_kernel', PACKAGE = 'JuniperKernel', connection_file)
 }
 
 boot_kernel <- function(kernel) {
-    invisible(.Call(`_JuniperKernel_boot_kernel`, kernel))
+    invisible(.Call('_JuniperKernel_boot_kernel', PACKAGE = 'JuniperKernel', kernel))
 }
 
 #' The XMock
@@ -18,54 +18,54 @@ boot_kernel <- function(kernel) {
 #'
 #' @export
 the_xmock <- function() {
-    .Call(`_JuniperKernel_the_xmock`)
+    .Call('_JuniperKernel_the_xmock', PACKAGE = 'JuniperKernel')
 }
 
 stream_stdout <- function(kernel, output) {
-    invisible(.Call(`_JuniperKernel_stream_stdout`, kernel, output))
+    invisible(.Call('_JuniperKernel_stream_stdout', PACKAGE = 'JuniperKernel', kernel, output))
 }
 
 stream_stderr <- function(kernel, err) {
-    invisible(.Call(`_JuniperKernel_stream_stderr`, kernel, err))
+    invisible(.Call('_JuniperKernel_stream_stderr', PACKAGE = 'JuniperKernel', kernel, err))
 }
 
 rebroadcast_input <- function(kernel, execution_input, execution_count) {
-    invisible(.Call(`_JuniperKernel_rebroadcast_input`, kernel, execution_input, execution_count))
+    invisible(.Call('_JuniperKernel_rebroadcast_input', PACKAGE = 'JuniperKernel', kernel, execution_input, execution_count))
 }
 
 execute_result <- function(kernel, data) {
-    invisible(.Call(`_JuniperKernel_execute_result`, kernel, data))
+    invisible(.Call('_JuniperKernel_execute_result', PACKAGE = 'JuniperKernel', kernel, data))
 }
 
 jk_device <- function(kernel, bg, width, height, pointsize, standalone, aliases) {
-    invisible(.Call(`_JuniperKernel_jk_device`, kernel, bg, width, height, pointsize, standalone, aliases))
+    invisible(.Call('_JuniperKernel_jk_device', PACKAGE = 'JuniperKernel', kernel, bg, width, height, pointsize, standalone, aliases))
 }
 
 filter_comms <- function(target_name) {
-    .Call(`_JuniperKernel_filter_comms`, target_name)
+    .Call('_JuniperKernel_filter_comms', PACKAGE = 'JuniperKernel', target_name)
 }
 
 comm_request <- function(type) {
-    invisible(.Call(`_JuniperKernel_comm_request`, type))
+    invisible(.Call('_JuniperKernel_comm_request', PACKAGE = 'JuniperKernel', type))
 }
 
 run_client <- function(hbport, ioport, shport, ctport, inport) {
-    .Call(`_JuniperKernel_run_client`, hbport, ioport, shport, ctport, inport)
+    .Call('_JuniperKernel_run_client', PACKAGE = 'JuniperKernel', hbport, ioport, shport, ctport, inport)
 }
 
 client_exec_request <- function(jtc, payload) {
-    invisible(.Call(`_JuniperKernel_client_exec_request`, jtc, payload))
+    invisible(.Call('_JuniperKernel_client_exec_request', PACKAGE = 'JuniperKernel', jtc, payload))
 }
 
 client_exec_reply <- function(jtc) {
-    .Call(`_JuniperKernel_client_exec_reply`, jtc)
+    .Call('_JuniperKernel_client_exec_reply', PACKAGE = 'JuniperKernel', jtc)
 }
 
 wait_for_hb <- function(jtc) {
-    invisible(.Call(`_JuniperKernel_wait_for_hb`, jtc))
+    invisible(.Call('_JuniperKernel_wait_for_hb', PACKAGE = 'JuniperKernel', jtc))
 }
 
 iopub_recv <- function(jtc) {
-    .Call(`_JuniperKernel_iopub_recv`, jtc)
+    .Call('_JuniperKernel_iopub_recv', PACKAGE = 'JuniperKernel', jtc)
 }
 

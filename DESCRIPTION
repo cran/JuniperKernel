@@ -1,6 +1,6 @@
 Package: JuniperKernel
 Title: Kernel for 'Jupyter'
-Version: 1.2.2.0
+Version: 1.2.3.0
 Date: 2018-01-15
 Authors@R: c(
   person("Spencer Aiello",   role=c("aut", "cre", "cph"), email="spnrpa@gmail.com"),
@@ -16,7 +16,7 @@ Authors@R: c(
 Copyright: See the file COPYRIGHTS
 Depends: R (>= 3.2.0)
 Imports: utils, jsonlite, repr, Rcpp (>= 0.11.0), gdtools (>= 0.1.6),
-        pbdZMQ (>= 0.3-1), data.table, methods
+        pbdZMQ (>= 0.3-2), data.table, methods
 Suggests: RUnit, roxygen2
 Collate: 'booter.R' 'comm_close.R' 'comm_info_request.R' 'comm_msg.R'
         'comm_open.R' 'complete_request.R' 'execute_request.R'
@@ -34,7 +34,7 @@ License: GPL (>= 2)
 BugReports: https://github.com/JuniperKernel/JuniperKernel/issues
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2018-01-16 08:27:51 UTC; spencer
+Packaged: 2018-02-05 16:57:42 UTC; saiello8
 Author: Spencer Aiello [aut, cre, cph],
   Wei-Chen Chen [ctb],
   Stephan Brumme [cph],
@@ -47,4 +47,4 @@ Author: Spencer Aiello [aut, cre, cph],
   Niels Lohmann [cph]
 Maintainer: Spencer Aiello <spnrpa@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-01-16 08:36:07 UTC
+Date/Publication: 2018-02-05 17:25:56 UTC
