@@ -17,13 +17,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // boot_kernel
-void boot_kernel(SEXP kernel);
+SEXP boot_kernel(SEXP kernel);
 RcppExport SEXP _JuniperKernel_boot_kernel(SEXP kernelSEXP) {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type kernel(kernelSEXP);
-    boot_kernel(kernel);
-    return R_NilValue;
+    rcpp_result_gen = Rcpp::wrap(boot_kernel(kernel));
+    return rcpp_result_gen;
 END_RCPP
 }
 // the_xmock
@@ -36,25 +37,27 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// stream_stdout
-void stream_stdout(SEXP kernel, const std::string& output);
-RcppExport SEXP _JuniperKernel_stream_stdout(SEXP kernelSEXP, SEXP outputSEXP) {
+// sock_recv
+SEXP sock_recv(SEXP kernel, std::string sockName);
+RcppExport SEXP _JuniperKernel_sock_recv(SEXP kernelSEXP, SEXP sockNameSEXP) {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type kernel(kernelSEXP);
-    Rcpp::traits::input_parameter< const std::string& >::type output(outputSEXP);
-    stream_stdout(kernel, output);
-    return R_NilValue;
+    Rcpp::traits::input_parameter< std::string >::type sockName(sockNameSEXP);
+    rcpp_result_gen = Rcpp::wrap(sock_recv(kernel, sockName));
+    return rcpp_result_gen;
 END_RCPP
 }
-// stream_stderr
-void stream_stderr(SEXP kernel, const std::string& err);
-RcppExport SEXP _JuniperKernel_stream_stderr(SEXP kernelSEXP, SEXP errSEXP) {
+// post_handle
+void post_handle(SEXP kernel, Rcpp::List res, std::string sockName);
+RcppExport SEXP _JuniperKernel_post_handle(SEXP kernelSEXP, SEXP resSEXP, SEXP sockNameSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type kernel(kernelSEXP);
-    Rcpp::traits::input_parameter< const std::string& >::type err(errSEXP);
-    stream_stderr(kernel, err);
+    Rcpp::traits::input_parameter< Rcpp::List >::type res(resSEXP);
+    Rcpp::traits::input_parameter< std::string >::type sockName(sockNameSEXP);
+    post_handle(kernel, res, sockName);
     return R_NilValue;
 END_RCPP
 }
@@ -181,8 +184,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_JuniperKernel_init_kernel", (DL_FUNC) &_JuniperKernel_init_kernel, 1},
     {"_JuniperKernel_boot_kernel", (DL_FUNC) &_JuniperKernel_boot_kernel, 1},
     {"_JuniperKernel_the_xmock", (DL_FUNC) &_JuniperKernel_the_xmock, 0},
-    {"_JuniperKernel_stream_stdout", (DL_FUNC) &_JuniperKernel_stream_stdout, 2},
-    {"_JuniperKernel_stream_stderr", (DL_FUNC) &_JuniperKernel_stream_stderr, 2},
+    {"_JuniperKernel_sock_recv", (DL_FUNC) &_JuniperKernel_sock_recv, 2},
+    {"_JuniperKernel_post_handle", (DL_FUNC) &_JuniperKernel_post_handle, 3},
     {"_JuniperKernel_rebroadcast_input", (DL_FUNC) &_JuniperKernel_rebroadcast_input, 3},
     {"_JuniperKernel_execute_result", (DL_FUNC) &_JuniperKernel_execute_result, 2},
     {"_JuniperKernel_jk_device", (DL_FUNC) &_JuniperKernel_jk_device, 7},

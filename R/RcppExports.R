@@ -6,7 +6,7 @@ init_kernel <- function(connection_file) {
 }
 
 boot_kernel <- function(kernel) {
-    invisible(.Call('_JuniperKernel_boot_kernel', PACKAGE = 'JuniperKernel', kernel))
+    .Call('_JuniperKernel_boot_kernel', PACKAGE = 'JuniperKernel', kernel)
 }
 
 #' The XMock
@@ -21,12 +21,12 @@ the_xmock <- function() {
     .Call('_JuniperKernel_the_xmock', PACKAGE = 'JuniperKernel')
 }
 
-stream_stdout <- function(kernel, output) {
-    invisible(.Call('_JuniperKernel_stream_stdout', PACKAGE = 'JuniperKernel', kernel, output))
+sock_recv <- function(kernel, sockName) {
+    .Call('_JuniperKernel_sock_recv', PACKAGE = 'JuniperKernel', kernel, sockName)
 }
 
-stream_stderr <- function(kernel, err) {
-    invisible(.Call('_JuniperKernel_stream_stderr', PACKAGE = 'JuniperKernel', kernel, err))
+post_handle <- function(kernel, res, sockName) {
+    invisible(.Call('_JuniperKernel_post_handle', PACKAGE = 'JuniperKernel', kernel, res, sockName))
 }
 
 rebroadcast_input <- function(kernel, execution_input, execution_count) {
