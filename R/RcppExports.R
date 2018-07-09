@@ -5,8 +5,8 @@ init_kernel <- function(connection_file) {
     .Call('_JuniperKernel_init_kernel', PACKAGE = 'JuniperKernel', connection_file)
 }
 
-boot_kernel <- function(kernel) {
-    .Call('_JuniperKernel_boot_kernel', PACKAGE = 'JuniperKernel', kernel)
+boot_kernel <- function(kernel, interrupt_event) {
+    .Call('_JuniperKernel_boot_kernel', PACKAGE = 'JuniperKernel', kernel, interrupt_event)
 }
 
 #' The XMock

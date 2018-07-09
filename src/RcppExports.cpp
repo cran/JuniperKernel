@@ -17,13 +17,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // boot_kernel
-SEXP boot_kernel(SEXP kernel);
-RcppExport SEXP _JuniperKernel_boot_kernel(SEXP kernelSEXP) {
+SEXP boot_kernel(SEXP kernel, int interrupt_event);
+RcppExport SEXP _JuniperKernel_boot_kernel(SEXP kernelSEXP, SEXP interrupt_eventSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type kernel(kernelSEXP);
-    rcpp_result_gen = Rcpp::wrap(boot_kernel(kernel));
+    Rcpp::traits::input_parameter< int >::type interrupt_event(interrupt_eventSEXP);
+    rcpp_result_gen = Rcpp::wrap(boot_kernel(kernel, interrupt_event));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -182,7 +183,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_JuniperKernel_init_kernel", (DL_FUNC) &_JuniperKernel_init_kernel, 1},
-    {"_JuniperKernel_boot_kernel", (DL_FUNC) &_JuniperKernel_boot_kernel, 1},
+    {"_JuniperKernel_boot_kernel", (DL_FUNC) &_JuniperKernel_boot_kernel, 2},
     {"_JuniperKernel_the_xmock", (DL_FUNC) &_JuniperKernel_the_xmock, 0},
     {"_JuniperKernel_sock_recv", (DL_FUNC) &_JuniperKernel_sock_recv, 2},
     {"_JuniperKernel_post_handle", (DL_FUNC) &_JuniperKernel_post_handle, 3},

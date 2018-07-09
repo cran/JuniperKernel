@@ -1,7 +1,7 @@
 Package: JuniperKernel
 Title: Kernel for 'Jupyter'
-Version: 1.4.0.0
-Date: 2018-04-17
+Version: 1.4.1.0
+Date: 2018-07-09
 Authors@R: c(
   person("Spencer Aiello",   role=c("aut", "cre", "cph"), email="spnrpa@gmail.com"),
   person("Wei-Chen Chen",    role="ctb"),
@@ -35,7 +35,7 @@ License: GPL (>= 2)
 BugReports: https://github.com/JuniperKernel/JuniperKernel/issues
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2018-04-24 00:27:56 UTC; spencer
+Packaged: 2018-07-09 16:03:05 UTC; spencer
 Author: Spencer Aiello [aut, cre, cph],
   Wei-Chen Chen [ctb],
   Stephan Brumme [cph],
@@ -48,4 +48,4 @@ Author: Spencer Aiello [aut, cre, cph],
   Niels Lohmann [cph]
 Maintainer: Spencer Aiello <spnrpa@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-04-24 03:10:55 UTC
+Date/Publication: 2018-07-09 16:20:03 UTC
